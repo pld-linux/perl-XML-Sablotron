@@ -13,7 +13,7 @@ Group:		Development/Languages/Perl
 Source0:	http://download-2.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
 # Source0-md5:	afe32c500d339b42381dd22312e595f6
 BuildRequires:	expat-devel > 1.95
-BuildRequires:	perl-devel >= 5.6
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	sablotron-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
