@@ -10,7 +10,8 @@ Version:	1.0
 Release:	1
 License:	GPL v2+ or MPL v1.1
 Group:		Development/Languages/Perl
-Source0:	http://download-2.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
+#Source0Download:	http://www.gingerall.com/charlie/ga/xml/d_sab.xml
+Source0:	http://download-1.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
 # Source0-md5:	f9825c7f9a2243841de65bba9310fa58
 BuildRequires:	expat-devel > 1.95
 BuildRequires:	perl-devel >= 1:5.8.0
