@@ -8,7 +8,7 @@ License:	GPL or MPLv1.1
 Group:		Development/Languages/Perl
 Source0:	http://download-2.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
 BuildRequires:	expat-devel > 1.95
-BuildRequires:	perl >= 5.6
+BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	sablotron-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
