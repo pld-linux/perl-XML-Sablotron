@@ -6,12 +6,12 @@
 Summary:	XML::Sablotron perl module
 Summary(pl):	Modu³ perla XML::Sablotron
 Name:		perl-XML-Sablotron
-Version:	0.90
-Release:	3
+Version:	1.0
+Release:	1
 License:	GPL v2+ or MPL v1.1
 Group:		Development/Languages/Perl
 Source0:	http://download-2.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
-# Source0-md5:	afe32c500d339b42381dd22312e595f6
+# Source0-md5:	f9825c7f9a2243841de65bba9310fa58
 BuildRequires:	expat-devel > 1.95
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -49,11 +49,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README Changes
-%{perl_vendorarch}/XML/Sablotron*
+%{perl_vendorarch}/XML/Sablotron.pm
+%{perl_vendorarch}/XML/Sablotron
 %dir %{perl_vendorarch}/auto/XML/Sablotron
 %{perl_vendorarch}/auto/XML/Sablotron/Sablotron.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/XML/Sablotron/Sablotron.so
-%dir %{perl_vendorarch}/auto/XML/Sablotron/DOM
-%{perl_vendorarch}/auto/XML/Sablotron/DOM/DOM.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/XML/Sablotron/DOM/DOM.so
 %{_mandir}/man3/*
