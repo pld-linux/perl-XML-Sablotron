@@ -3,13 +3,13 @@ Summary:	XML::Sablotron perl module
 Summary(pl):	Modu³ perla XML::Sablotron
 Name:		perl-XML-Sablotron
 Version:	0.90
-Release:	1
+Release:	2
 License:	GPL or MPLv1.1
 Group:		Development/Languages/Perl
 Source0:	http://download-2.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
 BuildRequires:	expat-devel > 1.95
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	sablotron-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,7 +25,8 @@ procesora XSLT Sablotron.
 %setup -q -n XML-Sablotron-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
@@ -41,11 +42,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README Changes
-%{perl_sitearch}/XML/Sablotron*
-%dir %{perl_sitearch}/auto/XML/Sablotron
-%{perl_sitearch}/auto/XML/Sablotron/Sablotron.bs
-%attr(755,root,root) %{perl_sitearch}/auto/XML/Sablotron/Sablotron.so
-%dir %{perl_sitearch}/auto/XML/Sablotron/DOM
-%{perl_sitearch}/auto/XML/Sablotron/DOM/DOM.bs
-%attr(755,root,root) %{perl_sitearch}/auto/XML/Sablotron/DOM/DOM.so
+%{perl_vendorarch}/XML/Sablotron*
+%dir %{perl_vendorarch}/auto/XML/Sablotron
+%{perl_vendorarch}/auto/XML/Sablotron/Sablotron.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/XML/Sablotron/Sablotron.so
+%dir %{perl_vendorarch}/auto/XML/Sablotron/DOM
+%{perl_vendorarch}/auto/XML/Sablotron/DOM/DOM.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/XML/Sablotron/DOM/DOM.so
 %{_mandir}/man3/*
