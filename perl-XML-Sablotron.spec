@@ -3,7 +3,7 @@ Summary:	XML::Sablotron perl module
 Summary(pl):	Modu³ perla XML::Sablotron
 Name:		perl-XML-Sablotron
 Version:	0.90
-Release:	1
+Release:	2
 License:	GPL or MPLv1.1
 Group:		Development/Languages/Perl
 Source0:	http://download-2.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
