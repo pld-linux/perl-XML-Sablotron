@@ -1,0 +1,59 @@
+This patch only fixes dom test, sablot test still crashes.
+It cannot be fixes without breaking API or adding some global variable:
+sablotron SchemeHandler interface uses "int" handles
+XML::Sablotron::Processor uses these handles to pass perl variables
+as SV*, which don't fit into int on 64-bit platforms.
+
+Some possible solution could be to add some hash (global or stored
+in wrapper((?) probably breaking perl API) and store perl variables
+in this hash with handles as keys.
+
+--- XML-Sablotron-1.0/DOM/DOM.xsh.orig	2003-02-24 14:01:12.000000000 +0000
++++ XML-Sablotron-1.0/DOM/DOM.xsh	2004-05-23 17:26:57.000000000 +0000
+@@ -635,7 +635,7 @@
+          i = 0;
+          hv_iterinit(maph);
+          while (he = hv_iternext(maph)) {
+-             int l;
++             STRLEN l;
+              if (++nsnum > 10 * mapsize) {
+                  mapsize++;
+                  nsarr = realloc(nsarr, (10*2*mapsize + 1) * sizeof(char*));
+--- XML-Sablotron-1.0/Processor/Processor.h.orig	2003-02-21 14:17:32.000000000 +0000
++++ XML-Sablotron-1.0/Processor/Processor.h	2004-05-23 17:35:23.000000000 +0000
+@@ -250,7 +250,7 @@
+   GV *gv;
+   unsigned long ret = 0;
+   SV *value;
+-  unsigned int len;
++  STRLEN len;
+ 
+   wrapper = (SV*)userData;
+ 
+@@ -375,7 +375,7 @@
+   GV *gv;
+   unsigned long ret = 0;
+   SV *value;
+-  unsigned int len;
++  STRLEN len;
+ 
+   wrapper = (SV*)userData;
+ 
+--- XML-Sablotron-1.0/Situation/Situation.xsh.orig	2003-02-21 14:17:32.000000000 +0000
++++ XML-Sablotron-1.0/Situation/Situation.xsh	2004-05-23 17:17:33.000000000 +0000
+@@ -42,13 +42,13 @@
+ PROTOTYPES: ENABLE
+ ##############################################################
+ 
+-int
++IV
+ _getNewSituationHandle(object)
+         SV*      object
+         CODE:
+         SablotSituation sit;
+         SablotCreateSituation(&sit);
+-        RETVAL = (int)sit;
++        RETVAL = (IV)sit;
+         OUTPUT:
+         RETVAL
+ 
