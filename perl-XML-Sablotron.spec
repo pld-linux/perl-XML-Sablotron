@@ -13,10 +13,14 @@ Group:		Development/Languages/Perl
 #Source0Download:	http://www.gingerall.com/charlie/ga/xml/d_sab.xml
 Source0:	http://download-1.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
 # Source0-md5:	f9825c7f9a2243841de65bba9310fa58
+# incomplete, see comments inside if you want to finish
+Patch0:		%{name}-types.patch
 BuildRequires:	expat-devel > 1.95
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	sablotron-devel
+# see unfinished patch0
+ExcludeArch:	alpha amd64 ia64 ppc64 sparc64 s390x
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
