@@ -6,15 +6,16 @@
 Summary:	XML::Sablotron perl module
 Summary(pl):	Modu³ perla XML::Sablotron
 Name:		perl-XML-Sablotron
-Version:	1.0
+Version:	1.01
 Release:	1
 License:	GPL v2+ or MPL v1.1
 Group:		Development/Languages/Perl
 #Source0Download:	http://www.gingerall.com/charlie/ga/xml/d_sab.xml
 Source0:	http://download-1.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
-# Source0-md5:	f9825c7f9a2243841de65bba9310fa58
+# Source0-md5:	d9d21b20bff8b04c966b9c3b678989c1
 # incomplete, see comments inside if you want to finish
 Patch0:		%{name}-types.patch
+URL:		http://www.gingerall.com/charlie/ga/xml/p_sab.xml
 BuildRequires:	expat-devel > 1.95
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -33,6 +34,7 @@ procesora XSLT Sablotron.
 
 %prep
 %setup -q -n XML-Sablotron-%{version}
+#%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
