@@ -1,10 +1,14 @@
+#
+# Conditional build:
+%bcond_without	tests	# do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	XML::Sablotron perl module
 Summary(pl):	Modu³ perla XML::Sablotron
 Name:		perl-XML-Sablotron
 Version:	0.90
 Release:	2
-License:	GPL or MPLv1.1
+License:	GPL v2+ or MPL v1.1
 Group:		Development/Languages/Perl
 Source0:	http://download-2.gingerall.cz/download/sablot/XML-Sablotron-%{version}.tar.gz
 # Source0-md5:	afe32c500d339b42381dd22312e595f6
@@ -28,8 +32,10 @@ procesora XSLT Sablotron.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
 
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
