@@ -25,7 +25,7 @@ procesora XSLT Sablotron.
 %setup -q -n XML-Sablotron-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
