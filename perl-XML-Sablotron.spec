@@ -19,9 +19,10 @@ URL:		http://www.gingerall.com/charlie/ga/xml/p_sab.xml
 BuildRequires:	expat-devel > 1.95
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.213
 BuildRequires:	sablotron-devel
 # see unfinished patch0
-ExcludeArch:	alpha amd64 ia64 ppc64 sparc64 s390x
+ExcludeArch:	%{x8664} alpha ia64 ppc64 sparc64 s390x
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
