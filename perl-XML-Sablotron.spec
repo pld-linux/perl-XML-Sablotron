@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	XML::Sablotron perl module
-Summary(pl):	Modu³ perla XML::Sablotron
+Summary(pl.UTF-8):   ModuÅ‚ perla XML::Sablotron
 Name:		perl-XML-Sablotron
 Version:	1.01
 Release:	1
@@ -29,8 +29,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 XML::Sablotron is a simple Perl package, which encapsulates the C API
 of Sablotron XSLT processor.
 
-%description -l pl
-XML::Sablotron to prosty pakiet Perla zawieraj±cy interfejs do API
+%description -l pl.UTF-8
+XML::Sablotron to prosty pakiet Perla zawierajÄ…cy interfejs do API
 procesora XSLT Sablotron.
 
 %prep
