@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	XML::Sablotron perl module
-Summary(pl.UTF-8):   Moduł perla XML::Sablotron
+Summary(pl.UTF-8):	Moduł perla XML::Sablotron
 Name:		perl-XML-Sablotron
 Version:	1.01
 Release:	1
