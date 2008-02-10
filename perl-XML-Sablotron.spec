@@ -7,7 +7,7 @@ Summary:	XML::Sablotron perl module
 Summary(pl.UTF-8):	Moduł perla XML::Sablotron
 Name:		perl-XML-Sablotron
 Version:	1.01
-Release:	1
+Release:	2
 License:	GPL v2+ or MPL v1.1
 Group:		Development/Languages/Perl
 #Source0Download:	http://www.gingerall.com/charlie/ga/xml/d_sab.xml
