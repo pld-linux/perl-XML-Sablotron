@@ -61,6 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/XML/Sablotron.pm
 %{perl_vendorarch}/XML/Sablotron
 %dir %{perl_vendorarch}/auto/XML/Sablotron
-%{perl_vendorarch}/auto/XML/Sablotron/Sablotron.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/XML/Sablotron/Sablotron.so
 %{_mandir}/man3/*
