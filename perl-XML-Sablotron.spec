@@ -34,7 +34,7 @@ procesora XSLT Sablotron.
 
 %prep
 %setup -q -n XML-Sablotron-%{version}
-#%patch0 -p1
+#%%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
